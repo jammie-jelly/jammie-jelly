@@ -35,8 +35,8 @@
 
 ### Skill Distribution
 
-<img src="https://skillicons.dev/icons?i=bash,python,go,linux,docker,kubernetes,ansible,aws,githubactions" alt="Skill Icons"/>
-
+<img src="https://skillicons.dev/icons?i=bash,python,go,linux,docker" alt="Skill Icons"/>
+<img src="https://skillicons.dev/icons?i=kubernetes,ansible,aws,githubactions" alt="Skill Icons"/>
 
 </td></tr></table>
 </div>
