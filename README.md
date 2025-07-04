@@ -5,7 +5,7 @@
 
 # My Developer Profile
 [![Roadmap.sh](https://img.shields.io/badge/Profile%20Data%20Source-roadmap.sh-blue?style=flat&logo=icloud)](https://roadmap.sh/u/kiberam)
-![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-06-18&color=green)
+![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-07-04&color=green)
 
 
 ## 🛠️ Skills
@@ -21,11 +21,11 @@
 
  ![Docker](https://img.shields.io/badge/Docker-79%25-green?style=flat&logo=docker)  `▰▰▰▰▰▰▰▱▱▱`
 
- ![Python](https://img.shields.io/badge/Python-38%25-red?style=flat&logo=python)  `▰▰▰▱▱▱▱▱▱▱`
+ ![Python](https://img.shields.io/badge/Python-42%25-yellow?style=flat&logo=python)  `▰▰▰▰▱▱▱▱▱▱`
 
  ![Linux](https://img.shields.io/badge/Linux-85%25-brightgreen?style=flat&logo=linux)  `▰▰▰▰▰▰▰▰▱▱`
 
- ![Go](https://img.shields.io/badge/Go-46%25-yellow?style=flat&logo=go)  `▰▰▰▰▱▱▱▱▱▱`
+ ![Go](https://img.shields.io/badge/Go-51%25-yellow?style=flat&logo=go)  `▰▰▰▰▰▱▱▱▱▱`
 
  ![Backend](https://img.shields.io/badge/Backend-44%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
 
@@ -70,6 +70,8 @@
 🔗 [Expense Tracker Api](https://roadmap.sh/projects/expense-tracker-api) (0 👍)
 
 🔗 [Movie Reservation System](https://roadmap.sh/projects/movie-reservation-system) (0 👍)
+
+🔗 [Database Backup Utility](https://roadmap.sh/projects/database-backup-utility) (0 👍)
 
 
 <div align="center">
