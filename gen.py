@@ -159,7 +159,8 @@ def generate_markdown(skills, projects):
         output.append('\n</td><td valign="top" width="50%">\n\n')
         output.append("### Skill Distribution\n")
         output.append('<img src="https://skillicons.dev/icons?i=bash,python,go,linux,docker" alt="Skill Icons"/>\n')
-        output.append('<img src="https://skillicons.dev/icons?i=kubernetes,ansible,aws,githubactions" alt="Skill Icons"/>\n')
+        output.append('<img src="https://skillicons.dev/icons?i=kubernetes,ansible,aws,githubactions,terraform" alt="Skill Icons"/>\n')
+        output.append('<img src="https://skillicons.dev/icons?i=html,javascript,tailwind,npm,postgres" alt="Skill Icons"/>\n')
         output.append("\n</td></tr></table>")
         output.append("\n</div>\n")
 
