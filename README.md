@@ -5,7 +5,7 @@
 
 # My Developer Profile
 [![Roadmap.sh](https://img.shields.io/badge/Profile%20Data%20Source-roadmap.sh-blue?style=flat&logo=icloud)](https://roadmap.sh/u/kiberam)
-![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-07-21&color=green)
+![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-08-01&color=green)
 
 
 ## 🛠️ Skills
@@ -42,6 +42,7 @@
 <img src="https://skillicons.dev/icons?i=kubernetes,ansible,aws,githubactions,terraform" alt="Skill Icons"/>
 
 <img src="https://skillicons.dev/icons?i=html,javascript,tailwind,npm,postgres" alt="Skill Icons"/>
+
 
 </td></tr></table>
 
