@@ -5,7 +5,7 @@
 
 # My Developer Profile
 [![Roadmap.sh](https://img.shields.io/badge/Profile%20Data%20Source-roadmap.sh-blue?style=flat&logo=icloud)](https://roadmap.sh/u/kiberam)
-![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-08-04&color=green)
+![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-08-18&color=green)
 
 
 ## 🛠️ Skills
@@ -19,9 +19,9 @@
 
  ![DevOps](https://img.shields.io/badge/DevOps-46%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
 
- ![Docker](https://img.shields.io/badge/Docker-79%25-green?style=flat&logo=docker)  `▰▰▰▰▰▰▰▱▱▱`
+ ![Docker](https://img.shields.io/badge/Docker-80%25-brightgreen?style=flat&logo=docker)  `▰▰▰▰▰▰▰▰▱▱`
 
- ![Python](https://img.shields.io/badge/Python-42%25-yellow?style=flat&logo=python)  `▰▰▰▰▱▱▱▱▱▱`
+ ![Python](https://img.shields.io/badge/Python-53%25-yellow?style=flat&logo=python)  `▰▰▰▰▰▱▱▱▱▱`
 
  ![Linux](https://img.shields.io/badge/Linux-85%25-brightgreen?style=flat&logo=linux)  `▰▰▰▰▰▰▰▰▱▱`
 
