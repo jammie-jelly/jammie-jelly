@@ -5,7 +5,7 @@
 
 # My Developer Profile
 [![Roadmap.sh](https://img.shields.io/badge/Profile%20Data%20Source-roadmap.sh-blue?style=flat&logo=icloud)](https://roadmap.sh/u/kiberam)
-![Updated](https://img.shields.io/static/v1?label=Updated&message=2025-12-18&color=green)
+![Updated](https://img.shields.io/static/v1?label=Updated&message=2026-01-04&color=green)
 
 
 ## 🛠️ Skills
@@ -17,19 +17,19 @@
 
 ### Technical Proficiencies
 
+ ![DevOps](https://img.shields.io/badge/DevOps-47%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
+
+ ![Docker](https://img.shields.io/badge/Docker-82%25-brightgreen?style=flat&logo=docker)  `▰▰▰▰▰▰▰▰▱▱`
+
  ![Python](https://img.shields.io/badge/Python-61%25-green?style=flat&logo=python)  `▰▰▰▰▰▰▱▱▱▱`
 
  ![Linux](https://img.shields.io/badge/Linux-85%25-brightgreen?style=flat&logo=linux)  `▰▰▰▰▰▰▰▰▱▱`
 
- ![Kubernetes](https://img.shields.io/badge/Kubernetes-60%25-green?style=flat&logo=kubernetes)  `▰▰▰▰▰▰▱▱▱▱`
-
- ![Go](https://img.shields.io/badge/Go-58%25-yellow?style=flat&logo=go)  `▰▰▰▰▰▱▱▱▱▱`
-
- ![Docker](https://img.shields.io/badge/Docker-82%25-brightgreen?style=flat&logo=docker)  `▰▰▰▰▰▰▰▰▱▱`
-
- ![DevOps](https://img.shields.io/badge/DevOps-47%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
+ ![Go](https://img.shields.io/badge/Go-59%25-yellow?style=flat&logo=go)  `▰▰▰▰▰▱▱▱▱▱`
 
  ![Backend](https://img.shields.io/badge/Backend-53%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▰▱▱▱▱▱`
+
+ ![Kubernetes](https://img.shields.io/badge/Kubernetes-60%25-green?style=flat&logo=kubernetes)  `▰▰▰▰▰▰▱▱▱▱`
 
 
 </td><td valign="top" width="50%">
@@ -71,7 +71,7 @@
 
 🔗 [Expense Tracker Api](https://roadmap.sh/projects/expense-tracker-api) (0 👍)
 
-🔗 [Movie Reservation System](https://roadmap.sh/projects/movie-reservation-system) (0 👍)
+🔗 [Movie Reservation System](https://roadmap.sh/projects/movie-reservation-system) (1 👍)
 
 🔗 [Database Backup Utility](https://roadmap.sh/projects/database-backup-utility) (0 👍)
 
