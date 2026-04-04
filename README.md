@@ -5,48 +5,7 @@
 
 # My Developer Profile
 [![Roadmap.sh](https://img.shields.io/badge/Profile%20Data%20Source-roadmap.sh-blue?style=flat&logo=icloud)](https://roadmap.sh/u/kiberam)
-![Updated](https://img.shields.io/static/v1?label=Updated&message=2026-03-18&color=green)
-
-
-## 🛠️ Skills
-
-<div align="center">
-
-<table><tr><td valign="top" width="50%">
-
-
-### Technical Proficiencies
-
- ![Python](https://img.shields.io/badge/Python-59%25-yellow?style=flat&logo=python)  `▰▰▰▰▰▱▱▱▱▱`
-
- ![Linux](https://img.shields.io/badge/Linux-85%25-brightgreen?style=flat&logo=linux)  `▰▰▰▰▰▰▰▰▱▱`
-
- ![Kubernetes](https://img.shields.io/badge/Kubernetes-60%25-green?style=flat&logo=kubernetes)  `▰▰▰▰▰▰▱▱▱▱`
-
- ![Go](https://img.shields.io/badge/Go-63%25-green?style=flat&logo=go)  `▰▰▰▰▰▰▱▱▱▱`
-
- ![Docker](https://img.shields.io/badge/Docker-82%25-brightgreen?style=flat&logo=docker)  `▰▰▰▰▰▰▰▰▱▱`
-
- ![DevOps](https://img.shields.io/badge/DevOps-47%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
-
- ![Backend](https://img.shields.io/badge/Backend-46%25-yellow?style=flat&logo=gnubash)  `▰▰▰▰▱▱▱▱▱▱`
-
-
-</td><td valign="top" width="50%">
-
-
-### Skill Distribution
-
-<img src="https://skillicons.dev/icons?i=bash,python,go,linux,docker" alt="Skill Icons"/>
-
-<img src="https://skillicons.dev/icons?i=kubernetes,ansible,aws,githubactions,terraform" alt="Skill Icons"/>
-
-<img src="https://skillicons.dev/icons?i=html,javascript,tailwind,npm,postgres" alt="Skill Icons"/>
-
-
-</td></tr></table>
-
-</div>
+![Updated](https://img.shields.io/static/v1?label=Updated&message=2026-04-04&color=green)
 
 
 ## 🚀 Projects
