@@ -17,26 +17,38 @@ class ProfileParser(HTMLParser):
         self.current_percent = None
         self.current_project = None
         self.current_likes = None
-        self.in_skill_anchor = False
+        self.in_skill_button = False
         self.in_project_anchor = False
         self.in_project_likes = False
-        self.skill_content = []  # Accumulate content within skill anchor
+        self.in_skill_name_span = False
+        self.in_skill_percent_span = False
 
     def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        
+        attrs_dict = dict(attrs)
+
         if tag == 'h2':
             self.current_section = None
-        
-        if tag == 'a' and 'href' in attrs:
-            href = attrs['href']
-            if self.current_section == 'skills' and '?s=' in href:
-                self.in_skill_anchor = True
-                self.skill_content = []  # Reset for new skill
-            elif self.current_section == 'projects' and '/projects/' in href:
+
+        if tag == 'button' and self.current_section == 'skills':
+            self.in_skill_button = True
+            self.current_skill = None
+            self.current_percent = None
+            self.in_skill_name_span = False
+            self.in_skill_percent_span = False
+
+        if self.in_skill_button and tag == 'span':
+            class_val = attrs_dict.get('class', '')
+            if 'grow truncate' in class_val:
+                self.in_skill_name_span = True
+            elif 'text-xs text-gray-400' in class_val:
+                self.in_skill_percent_span = True
+
+        if tag == 'a' and 'href' in attrs_dict:
+            href = attrs_dict['href']
+            if self.current_section == 'projects' and '/projects/' in href:
                 self.in_project_anchor = True
                 self.current_project = href.split('/projects/')[-1]
-        
+
         if self.in_project_anchor and tag == 'span':
             self.in_project_likes = True
 
@@ -44,64 +56,56 @@ class ProfileParser(HTMLParser):
         data = data.strip()
         if not data:
             return
-        
+
         if not self.current_section:
             if "Skills I have mastered" in data:
                 self.current_section = 'skills'
             elif "Projects I have worked on" in data:
                 self.current_section = 'projects'
-        
-        if self.in_skill_anchor:
-            self.skill_content.append(data)
-            # Check if we've accumulated a percentage
-            full_content = ''.join(self.skill_content)
-            if '%' in full_content:
-                # Extract name (before last numeric part) and percent
-                parts = [x for x in self.skill_content if x and not x.startswith('<!--')]
-                if len(parts) >= 2:
-                    self.current_skill = parts[0]  # First content is name
-                    percent_str = re.sub(r'[^\d]', '', full_content)  # Extract digits from full content
-                    if percent_str:
-                        self.current_percent = int(percent_str)
-        
-        elif self.in_project_anchor and self.in_project_likes and data.isdigit():
+
+        if self.in_skill_name_span:
+            self.current_skill = data
+
+        if self.in_skill_percent_span:
+            percent_str = re.sub(r'[^\d]', '', data)
+            if percent_str:
+                self.current_percent = int(percent_str)
+
+        if self.in_project_anchor and self.in_project_likes and data.isdigit():
             self.current_likes = int(data)
 
     def handle_endtag(self, tag):
-        if tag == 'a' and self.in_skill_anchor:
+        if tag == 'span':
+            if self.in_skill_name_span:
+                self.in_skill_name_span = False
+            if self.in_skill_percent_span:
+                self.in_skill_percent_span = False
+            self.in_project_likes = False
+
+        if tag == 'button' and self.in_skill_button:
             if self.current_skill and self.current_percent is not None:
                 self.skills[self.current_skill] = self.current_percent
-            self.reset_skill_state()
-        
+            self.in_skill_button = False
+            self.current_skill = None
+            self.current_percent = None
+
         if tag == 'a' and self.in_project_anchor:
             if self.current_project and self.current_likes is not None:
                 self.projects[self.current_project] = self.current_likes
-            self.reset_project_state()
-        
-        if tag == 'span':
-            self.in_project_likes = False
+            self.in_project_anchor = False
+            self.current_project = None
+            self.current_likes = None
 
-    def reset_skill_state(self):
-        self.in_skill_anchor = False
-        self.current_skill = None
-        self.current_percent = None
-        self.skill_content = []
-
-    def reset_project_state(self):
-        self.in_project_anchor = False
-        self.current_project = None
-        self.current_likes = None
-        
 def fetch_logo(skill, max_retries=3, delay=2):
     """Check if logo exists on SimpleIcons, fallback to gnubash"""
     simple_icon_url = f"https://simpleicons.org/icons/{skill.lower()}.svg"
-    
+
     # Create request with proper headers
     req = urllib.request.Request(
         simple_icon_url,
         headers={'User-Agent': 'Mozilla/5.0 (compatible; SkillBadgeGenerator/1.0)'}
     )
-    
+
     for attempt in range(max_retries):
         try:
             with urllib.request.urlopen(req, timeout=5) as response:
@@ -109,7 +113,7 @@ def fetch_logo(skill, max_retries=3, delay=2):
                     return skill
                 raise Exception("Unexpected status code")
         except urllib.error.HTTPError as e:
-            if e.code == 404:  
+            if e.code == 404:
                 return "gnubash"
             # Other HTTP errors might be temporary, so retry
             if attempt == max_retries - 1:
@@ -129,9 +133,9 @@ def get_color(percent):
 
 def generate_markdown(skills, projects):
     output = []
-    
+
     output.append("## Hi there 👋\n")
-    
+
     # Header with badges
     output.append("""
 <div align="center">
@@ -147,10 +151,10 @@ def generate_markdown(skills, projects):
         output.append('<div align="center">\n')
         output.append('<table><tr><td valign="top" width="50%">\n\n')
         output.append("### Technical Proficiencies\n")
-        
+
         for skill, percent in skills.items():
             icon = fetch_logo(skill.lower())
-                
+
             filled = percent // 10
             empty = 10 - filled
             bar = "▰" * filled + "▱" * empty
@@ -170,7 +174,7 @@ def generate_markdown(skills, projects):
         for project, likes in projects.items():
             pretty_name = ' '.join(word.capitalize() for word in project.split('-'))
             output.append(f"🔗 [{pretty_name}](https://roadmap.sh/projects/{project}) ({likes} 👍)\n")
-    
+
     # Footer
     output.append("""
 <div align="center">
@@ -178,15 +182,15 @@ def generate_markdown(skills, projects):
 <i>Automatically generated from <a href="{0}">roadmap.sh profile</a></i>
 </div>
 """.format(profile_url))
-   
+
     return '\n'.join(output)
 
 
-    
+
 def main():
     try:
         # Fetch the page
-        req = Request(profile_url, 
+        req = Request(profile_url,
                      headers={'User-Agent': 'Mozilla/5.0'})
         with urlopen(req) as response:
             html_content = response.read().decode('utf-8')
@@ -198,7 +202,7 @@ def main():
         # Generate and print markdown
         markdown = generate_markdown(parser.skills, parser.projects)
         print(markdown)
-        
+
         # Write to README.md
         with open('README.md', 'w') as f:
             f.write(markdown)
