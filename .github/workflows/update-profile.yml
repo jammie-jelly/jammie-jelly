@@ -12,14 +12,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13' 
+          python-version: '3.13'
 
       - name: Run python script
-        run: python gen.py
+        run: |
+          python gen.py
+
+          # Guard: check for expected content markers
+          if ! grep -q "## 🛠️ Skills\|## 🚀 Projects" README.md; then
+            echo "Error: Parser failed to extract skills/projects sections. Aborting."
+            exit 1
+          fi
+
+          echo "Parser successfully extracted profile data"
 
       - name: Push changes
         run: |
